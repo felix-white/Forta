@@ -122,3 +122,16 @@ sudo systemctl enable fortad
 ```
 forta status
 ```
+# Testnet rewards
+You can check your SLA with this command:
+```
+curl https://api.forta.network/stats/sla/scanner/<FORTA_SCANNER_ADDRESS> | jq .statistics.avg
+```
+You will need install jq if it is not present:
+```
+sudo apt install jq
+```
+SLA Score will determine if and how much of the reward each scan node gets.
+- 100% reward: Average SLA ≥ 0.9
+- 80% reward: Average SLA ≥ 0.75
+- No reward: Average SLA < 0.75
